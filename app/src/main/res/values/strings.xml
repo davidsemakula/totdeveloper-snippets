@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Jump</string>
+
+    <string name="activity_signup">Sign Up</string>
+    <string name="activity_profile">Profile</string>
+
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_signin">Sign In</string>
+    <string name="action_signup">Sign Up</string>
+    <string name="action_anonymous">Continue Anonymously</string>
+</resources>

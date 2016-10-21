@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "143383222845",
+    "firebase_url": "https://fir-test-ddca2.firebaseio.com",
+    "project_id": "fir-test-ddca2",
+    "storage_bucket": "fir-test-ddca2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143383222845:android:7cf1d447c121b56e",
+        "android_client_info": {
+          "package_name": "com.nairobits.jump.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143383222845-0a5er71eiu0p4mon4ft25esvir379s8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh9wwi7x0L4RdVG2x-zgdRf0bkSHzk7gs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
