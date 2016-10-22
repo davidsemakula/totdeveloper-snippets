@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 /*
 * This activity was created to be a base class for all other activities
@@ -29,9 +31,10 @@ import com.google.firebase.auth.FirebaseUser;
 * */
 public class MyAppActivity extends AppCompatActivity {
 
-    public FirebaseAuth mAuth;
-    public FirebaseAuth.AuthStateListener mAuthListener;
-    public String TAG = "<Replace with your app name>"; // This used for logging
+    protected FirebaseAuth mAuth;
+    protected FirebaseAuth.AuthStateListener mAuthListener;
+    protected FirebaseDatabase mDatabase;
+    protected String TAG = "<Replace with your app name>"; // This used for logging
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,7 @@ public class MyAppActivity extends AppCompatActivity {
                 }
             }
         };
-
+        mDatabase = FirebaseDatabase.getInstance();
     }
 
     @Override
@@ -86,6 +89,10 @@ public class MyAppActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Called when a menu option is tapped
         switch (item.getItemId()) {
+            /* Remove cases that don't apply to your app */
+            case R.id.profile:
+                goToProfile();
+                return true;
             case R.id.signout:
                 signOut();
                 return true;
@@ -105,5 +112,20 @@ public class MyAppActivity extends AppCompatActivity {
 
     public void onSignOutCompleted() {
         // Override this in children that care about the sign out event
+    }
+
+    public void goToProfile() {
+        // Override this in children that care about the sign out event
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    // Call this to get the currrent Firebase user from any activity that extend MyAppActivity
+    public FirebaseUser getCurrentUser() {
+        return FirebaseAuth.getInstance().getCurrentUser();
+    }
+
+    public void showToast(String txt) {
+        Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
     }
 }

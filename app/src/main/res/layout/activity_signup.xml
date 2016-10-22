@@ -16,7 +16,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/action_signup"
         android:onClick="signUp"/>
 
 </LinearLayout>

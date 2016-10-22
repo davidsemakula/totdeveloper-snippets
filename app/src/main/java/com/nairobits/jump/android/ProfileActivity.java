@@ -32,14 +32,14 @@ public class ProfileActivity extends MyAppActivity {
             return;
         }
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser mFirebaseUser = getCurrentUser();
 
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName("Jane Q. User")
                 //.setPhotoUri(Uri.parse("<Uri of file goes here>"))
                 .build();
 
-        user.updateProfile(profileUpdates)
+        mFirebaseUser.updateProfile(profileUpdates)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -53,7 +53,7 @@ public class ProfileActivity extends MyAppActivity {
 
     @Override
     public void onSignOutCompleted() {
-        Intent secondIntent = new Intent(this, SignInActivity.class);
-        startActivity(secondIntent);
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
     }
 }

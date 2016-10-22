@@ -3,9 +3,13 @@
 
     <string name="activity_signup">Sign Up</string>
     <string name="activity_profile">Profile</string>
+    <string name="activity_feed">Feed</string>
+    <string name="activity_save">Save</string>
 
+    <string name="action_profile">Edit Profile</string>
     <string name="action_sign_out">Sign Out</string>
     <string name="action_signin">Sign In</string>
     <string name="action_signup">Sign Up</string>
     <string name="action_anonymous">Continue Anonymously</string>
+    <string name="action_save">Save</string>
 </resources>

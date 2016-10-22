@@ -37,7 +37,7 @@ public class SignInActivity extends MyAppActivity {
         TextView pswsdView = (TextView) findViewById(R.id.password);
         String password = String.valueOf(pswsdView.getText().toString());
 
-        if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Snackbar.make(view, "Enter a username and password", Snackbar.LENGTH_LONG).show();
             return;
         }
@@ -76,8 +76,8 @@ public class SignInActivity extends MyAppActivity {
     @Override
     public void onSignInCompleted() {
         // Called after sign in is complete
-        Intent secondIntent = new Intent(this, ProfileActivity.class);
-        startActivity(secondIntent);
+        Intent intent = new Intent(this, FeedActivity.class);
+        startActivity(intent);
     }
 
     public void goToSignUp(View view) {
